@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kapp-service-nodeport
+  labels:
+    app: kapp
+    namespace: kapp
+spec:
+  type: NodePort # <--- Tipo de serviço
+  selector:
+    app: kapp # Deve corresponder aos labels dos seus Pods/Deployment
+  ports:
+    - protocol: TCP
+      port: 80       # Porta do serviço (dentro do cluster)
+      targetPort: 5000 # Porta do container onde sua aplicação está rodando
+      nodePort: 30000 # Porta que será aberta nos nós (opcional, se omitido, Kubernetes aloca uma entre 30000-32767)

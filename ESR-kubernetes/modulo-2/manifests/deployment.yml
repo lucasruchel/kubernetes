@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kapp-deployment
+  namespace: kapp
+  labels:
+    app: kapp
+    
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: kapp
+  template:
+    metadata:
+      labels:
+        app: kapp
+    spec:
+      containers:
+      - name: kapp
+        image: lucasruchel/kapp:0.1.0
+        ports:
+        - containerPort: 5000
+        

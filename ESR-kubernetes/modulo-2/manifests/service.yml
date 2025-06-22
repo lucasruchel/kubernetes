@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: kapp
+  name: kapp
+  labels:
+    app: kapp
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+  selector:
+    app: kapp

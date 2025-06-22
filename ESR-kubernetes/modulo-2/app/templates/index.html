@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info da Aplicação</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        h1, h2 { color: #333; }
+        strong { color: #0056b3; }
+        input[type="text"] { padding: 8px; width: 250px; }
+        button { padding: 8px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Informações da Máquina e Aplicação 🚀</h1>
+    <p><strong>Hostname:</strong> {{ hostname }}</p>
+    <p><strong>Versão:</strong> {{ version }}</p>
+
+    <hr>
+
+    <h2>Salvar Dados na Sessão</h2>
+    <form method="post">
+        <label for="data">Insira um dado para salvar:</label><br><br>
+        <input type="text" id="data" name="data" value="{{ saved_data or '' }}" placeholder="Digite algo...">
+        <button type="submit">Salvar</button>
+    </form>
+
+    {# Exibe o dado salvo somente se ele existir na sessão #}
+    {% if saved_data %}
+        <p><strong>Dado salvo atualmente:</strong> {{ saved_data }}</p>
+    {% endif %}
+
+</body>
+</html>
