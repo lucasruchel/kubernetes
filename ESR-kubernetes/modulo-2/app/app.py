@@ -23,7 +23,7 @@ def index():
     # Obtém o hostname da máquina local
     hostname = socket.gethostname()
     # Define a versão da aplicação
-    version = "0.0.1"
+    version = "0.2.0"
 
     # Renderiza a página HTML, passando as variáveis necessárias
     # O método .get() é usado para buscar o dado da sessão sem causar um erro se ele não existir
