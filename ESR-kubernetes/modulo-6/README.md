@@ -44,9 +44,9 @@ Antes de criarmos o nosso deployment com o registry, iremos criar o volume que a
    kubectl apply -f manifests/registry-pvc.yml
 ```
 
-```bash
 
 E por fim será adicionado o deployment **registry-deployment** com 1 réplica.
+
 ```bash
 
 kubectl apply -f manifests/deployment.yml
